@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: copybasedb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    container_name: nestjs_container
+    build: ./backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:mysecretpassword@db:5432/copybasedb
+    depends_on:
+      - db
+
+  frontend:
+    container_name: vuejs_container
+    build: ./frontend
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
