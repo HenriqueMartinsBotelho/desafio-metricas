@@ -2,6 +2,9 @@
 
 O objetivo central deste projeto é a criação de uma solução web full-stack, projetada para permitir que os usuários façam o upload de planilhas contendo dados de assinantes e, a partir desses dados, possam extrair e visualizar métricas de negócios essenciais. Estas métricas incluem o Monthly Recurring Revenue (MRR) e a Churn Rate, embora a plataforma esteja estruturada para incorporar e apresentar uma gama mais ampla de indicadores, o que representa um valor agregado significativo. A representação dessas métricas se dá por meio de gráficos dinâmicos e interativos, oferecendo uma experiência de usuário enriquecedora e insights valiosos sobre o desempenho do negócio.
 
+![Imagem de exemplo](/apresentacao.png)
+
+
 # Tecnologias e Inovações Implementadas
 
 Para a realização deste projeto, optei pela adoção do framework **NestJs**, notável pela sua robustez e eficiência. A estrutura foi meticulosamente elaborada para assegurar que todos os cálculos significativos, incluindo MRR (Monthly Recurring Revenue) e Churn Rate, fossem **executados no back-end**. Considera-se um **equívoco crítico** a realização dessas operações no front-end, devido a preocupações com a segurança dos dados, integridade e a simplificação da manutenção futura. Esta escolha estratégica visa prevenir práticas que possam afetar negativamente a solidez da aplicação.
